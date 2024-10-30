@@ -1,11 +1,11 @@
-public class Moto extends Vehiculo {
+public class Moto extends  Vehiculo{
 
     public double cilindrada;
-    public boolean habilitadaParaRuta;
+    public boolean ruta;
 
-    public Moto(double cilindrada, boolean habilitadaParaRuta) {
+    public Moto (double cilindrada, boolean ruta){
         this.cilindrada = cilindrada;
-        this.habilitadaParaRuta = habilitadaParaRuta;
+        this.ruta = ruta;
     }
 
     @Override
@@ -15,11 +15,15 @@ public class Moto extends Vehiculo {
 
     @Override
     public double velocidadMaxima() {
-        return cilindrada / 2;
+        return cilindrada/2;
     }
 
     @Override
     public int cantidadDePasajeros() {
-        return cilindrada <= 75 ? 1 : 2;
+        if (cilindrada <= 75){
+            return 1;
+        } else {
+            return 2;
+         }
     }
 }

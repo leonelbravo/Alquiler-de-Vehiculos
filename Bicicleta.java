@@ -1,23 +1,23 @@
-public class Bicicleta extends Vehiculo {
+public class Bicicleta extends Vehiculo{
 
-    public double rodado;
+    public double rodado = 0;
 
-    public Bicicleta(double rodado) {
+    public Bicicleta (double rodado){
         this.rodado = rodado;
     }
 
     @Override
     public double consumoCada100Km() {
-        return 1; // Consumo fijo para bicicletas
+        return 1;
     }
 
     @Override
     public double velocidadMaxima() {
-        return rodado * 1.2; // Fórmula para la velocidad máxima
+        return rodado * 1.2;
     }
 
     @Override
     public int cantidadDePasajeros() {
-        return 1; // Las bicicletas solo pueden llevar un pasajero
+        return 1;
     }
 }

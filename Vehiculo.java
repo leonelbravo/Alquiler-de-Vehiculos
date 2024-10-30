@@ -4,13 +4,39 @@ import java.util.List;
 public abstract class Vehiculo {
     public String patente;
     public double kilometraje;
-    public List<Accidente> accidentes = new ArrayList<>();
+    List<Accidente> historial = new ArrayList<Accidente>();
 
     public abstract double consumoCada100Km();
     public abstract double velocidadMaxima();
     public abstract int cantidadDePasajeros();
 
-    public void agregarAccidente(Accidente accidente) {
-        accidentes.add(accidente);
+    //Patente
+    public String getPatente(){
+        return patente;
     }
+
+    //Accidente
+    public List<Accidente> getHistorial() {
+        return historial;
+    }
+
+    public void setHistorial(List<Accidente> historial) {
+        this.historial = historial;
+    }
+
+    public void agregarAccidente (int id, String descripcion, int fecha){
+        Accidente nuevoAcc = new Accidente(id, descripcion, fecha);
+        historial.add(nuevoAcc);
+    }
+
+    public int cantAccPorA(int anio){
+        int resultado = 0;
+        for (Accidente a : historial){
+            if (a.fecha == anio){
+                resultado +=1;
+            }
+        }
+        return resultado;
+    }
+
 }

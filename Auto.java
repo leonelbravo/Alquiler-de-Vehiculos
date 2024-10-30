@@ -1,25 +1,25 @@
-public class Auto extends Vehiculo {
+public class Auto extends Vehiculo{
 
-    public int cantidadDePasajeros;
-    public double velocidadMaxima;
+    public int pasajeros;
+    public double velMaxima;
 
-    public Auto(int cantidadDePasajeros, double velocidadMaxima) {
-        this.cantidadDePasajeros = cantidadDePasajeros;
-        this.velocidadMaxima = velocidadMaxima;
+    public Auto(double velMaxima, int pasajeros){
+        this.velMaxima = velMaxima;
+        this.pasajeros = pasajeros;
     }
 
     @Override
     public double consumoCada100Km() {
-        return 20 + (cantidadDePasajeros * 10);
+        return 20 + pasajeros*10;
     }
 
     @Override
     public double velocidadMaxima() {
-        return velocidadMaxima;
+        return velMaxima;
     }
 
     @Override
     public int cantidadDePasajeros() {
-        return cantidadDePasajeros;
+        return pasajeros;
     }
 }
