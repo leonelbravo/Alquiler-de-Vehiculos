@@ -24,9 +24,8 @@ public abstract class Vehiculo {
         this.historial = historial;
     }
 
-    public void agregarAccidente (int id, String descripcion, int fecha){
-        Accidente nuevoAcc = new Accidente(id, descripcion, fecha);
-        historial.add(nuevoAcc);
+    public void agregarAccidente(Accidente accidente) {
+        historial.add(accidente);
     }
 
     public int cantAccPorA(int anio){
